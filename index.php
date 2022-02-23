@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, height=device-height, target-densitydpi=device-dpi initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<link rel="apple-touch-icon" href="apple-touch-icon.png">
+	<link rel="manifest" href="/manifest.json">
+
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+	<!-- Font Awesome CSS -->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+
+	<style>
+	:root {
+		--animation-time: 750ms;
+		--shake-magnitude: 5;
+	}
+
+	body {
+		//color: red;
+		/*
+		//background-color: white;
+		//background-color: black;  // 100% black
+		//background-color: #080808;  // 95% black
+		//background-color: #101010;  // 90% black
+		*/
+		background-color: #101010;
+        padding-bottom:1em;
+	}
+
+	#overlay {
+		opacity: 0.0;
+		position: fixed;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		z-index: 999;
+	}
+
+	#bullhorn {
+		/*
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%,-50%);
+		*/
+		position: fixed;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%,-50%);
+		font-size: 60vmin;
+		color: firebrick;
+	}
+
+	#bullhorn-con {
+		text-align: center;
+	}
+
+	.shake {
+		animation: shake var(--animation-time);
+		animation-iteration-count: 1;
+	}
+
+	@keyframes shake {
+		0% { transform: scale(1.1) translate(calc((1px * var(--shake-magnitude)) - 50%), calc(1px - 50%)) rotate(calc(0deg * var(--shake-magnitude))); }
+		10% { transform: scale(1.2) translate(calc((-1px * var(--shake-magnitude)) - 50%), calc(-2px - 50%)) rotate(calc(-1deg * var(--shake-magnitude))); }
+		20% { transform: scale(1.1) translate(calc((-3px * var(--shake-magnitude)) - 50%), calc(0px - 50%)) rotate(calc(1deg * var(--shake-magnitude))); }
+		30% { transform: scale(1.2) translate(calc((3px * var(--shake-magnitude)) - 50%), calc(2px - 50%)) rotate(0deg); }
+		40% { transform: scale(1.1) translate(calc((1px * var(--shake-magnitude)) - 50%), calc(-1px - 50%)) rotate(calc(1deg * var(--shake-magnitude))); }
+		50% { transform: scale(1.2) translate(calc((-1px * var(--shake-magnitude)) - 50%), calc(2px - 50%)) rotate(calc(-1deg * var(--shake-magnitude))); }
+		60% { transform: scale(1.1) translate(calc((-3px * var(--shake-magnitude)) - 50%), calc(1px - 50%)) rotate(0deg); }
+		70% { transform: scale(1.2) translate(calc((3px * var(--shake-magnitude)) - 50%), calc(1px - 50%)) rotate(calc(-1deg * var(--shake-magnitude))); }
+		80% { transform: scale(1.1) translate(calc((-1px * var(--shake-magnitude)) - 50%), calc(-1px - 50%)) rotate(calc(1deg * var(--shake-magnitude))); }
+		90% { transform: scale(1.2) translate(calc((1px * var(--shake-magnitude)) - 50%), calc(2px - 50%)) rotate(0deg); }
+		//100% { transform: scale(1.1) translate(calc((1px * var(--shake-magnitude)) - 50%), calc(-2px - 50%)) rotate(calc(-1deg * var(--shake-magnitude))); }
+		100% { transform: scale(1.0) translate(-50%, -50%) rotate(0); }
+		/*
+		0% { transform: translate(1px, 1px) rotate(0deg); }
+		10% { transform: translate(-1px, -2px) rotate(-1deg); }
+		20% { transform: translate(-3px, 0px) rotate(1deg); }
+		30% { transform: translate(3px, 2px) rotate(0deg); }
+		40% { transform: translate(1px, -1px) rotate(1deg); }
+		50% { transform: translate(-1px, 2px) rotate(-1deg); }
+		60% { transform: translate(-3px, 1px) rotate(0deg); }
+		70% { transform: translate(3px, 1px) rotate(-1deg); }
+		80% { transform: translate(-1px, -1px) rotate(1deg); }
+		90% { transform: translate(1px, 2px) rotate(0deg); }
+		100% { transform: translate(1px, -2px) rotate(-1deg); }
+		*/
+	}
+	</style>
+
+	<title>DJ AIRHORN</title>
+</head>
+<body>
+	<div id="overlay"></div>
+
+	<div class="container">
+		<div id="bullhorn-con">
+			<div id="bullhorn">
+				<i class="fas fa-bullhorn"></i>
+			</div>
+		</div>
+	</div>
+    <nav style="height:1em;" class="text-center h4 text-white fixed-bottom"></nav>
+
+
+	<!-- Optional JavaScript -->
+	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+	<script>
+		$(document).ready(function(){
+			
+			animation_time = $(':root').css('--animation-time').replace(/\D/g,'');
+			//console.log('animation time: ' + animation_time);
+		
+			// play audio and animate horn on click or tap
+			$('body').on('click touchstart',function(){
+				var audio = new Audio('dj-airhorn-sound-effect.mp3');
+				//var audio = new Audio('dj-airhorn-sound-effect-single.mp3');
+				audio.play();
+
+				$('#bullhorn').removeClass('shake').delay(10).queue(function(){
+					$(this).addClass('shake').dequeue();
+				});
+			
+				/*
+				$('#bullhorn').addClass('shake').delay(animation_time).queue(function(){
+
+					$(this).removeClass('shake').dequeue();
+
+				});
+				*/
+			});
+		
+			/*
+			// remove class to prep animation again when complete
+			$('#bullhorn').on('transitionend MSTransitionEnd webkitTransitionEnd oTransitionEnd', function() {
+				console.log('stop shake');
+				$(this).removeClass('shake');
+			});
+			*/
+		});
+	</script>
+</body>
+</html>

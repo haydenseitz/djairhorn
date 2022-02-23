@@ -1,0 +1,14 @@
+{
+  "short_name": "DJ AIRHORN",
+  "name": "DJ AIRHORN",
+  "icons": [
+    {
+      "src": "djairhorn-icon.png",
+      "type": "image/png",
+      "sizes": "440x440"
+    }
+  ],
+  "start_url": "/",
+  "display": "standalone",
+}
+
